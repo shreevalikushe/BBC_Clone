@@ -11,12 +11,11 @@
         height: 30px;
         width: 100%;
         display: flex;
-        flex-direction: row;
         color: white;   
     }
     .logo{
         width: 5%;
-        height: 28px;
+        height: 90%;
         margin-left: 100px;
         margin-right: 50px;
     }
@@ -25,7 +24,7 @@
         border-radius: 50%;
         margin-left: 0px;
         margin-right: 0px ;
-        height: 28px;
+        height: 90%;
     }
     
     #navbar>p{
@@ -38,11 +37,11 @@
         margin-left: 2px !important;
     }
     #navbar>input{
-        width: 120px;
+        width: 10%;
         background: white;
         border: none;
         color: black;
-        height: 25px;
+        height: 83%;
         margin-top: 2px;
         padding: 10px;
     }

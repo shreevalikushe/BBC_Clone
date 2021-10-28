@@ -1,20 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BBC - Homepage</title>
     <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./home.css">
 </head>
+
 <body>
     <div id="outer_navbar">
     </div>
+    <div class="welcome_date">
+        <h3>Welcome to BBC.com</h3>
+        <div></div>
+        <p id="date"></p>
+    </div>
+    <div id="container_1">
+        
+    </div>
+
+
+
+
+
     <script type="module">
-    import Navbar from "./main.js"
-    let cont = document.getElementById("outer_navbar")
-    let navbar = Navbar()
-    cont.append(navbar)
+        // API Key : e5359e588b4435f8b102fd74ddf7d720
+        import Navbar, { fetchData, showData } from "./main.js"
+        let cont = document.getElementById("outer_navbar")
+        let navbar = Navbar()
+        cont.append(navbar)
+
+        let date = document.getElementById("date")
+        let dt = new Date()
+        date.append(dt)
+        window.addEventListener("click", () => {
+            box_1()
+        })
+        let box_1 = async() => {
+            try{
+                let container = document.getElementById("container_1")
+                let data = await fetchData({ category: "general", pageSize: 5 })
+                console.log(data)
+                showData(data,"container_1")
+                //container.append(content)
+            }
+           catch(err){
+               console.log(err)
+           }
+        }
+
     </script>
 </body>
+
 </html>
