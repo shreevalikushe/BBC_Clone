@@ -21,6 +21,11 @@
     <div id="container_1">
         
     </div>
+    <h3 id="news_section">News</h3>
+    <div id="container_2">
+
+    </div>
+    
 
 
 
@@ -36,9 +41,13 @@
         let date = document.getElementById("date")
         let dt = new Date()
         date.append(dt)
-        window.addEventListener("click", () => {
-            box_1()
+        window.addEventListener("load", () => {
+            load()
         })
+        let load = ()=>{
+            box_1()
+            box_2()
+        }
         let box_1 = async() => {
             try{
                 let container = document.getElementById("container_1")
@@ -50,6 +59,17 @@
            catch(err){
                console.log(err)
            }
+        }
+        let box_2 = async()=>{
+            try{
+                let container = document.getElementById("container_2")
+                let data = await fetchData({category:"business",pageSize:4})
+                console.log(data)
+                showData(data,"container_2")
+            }
+            catch(err){
+                console.log(err)
+            }
         }
 
     </script>
