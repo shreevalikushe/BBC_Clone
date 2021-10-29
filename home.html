@@ -25,6 +25,27 @@
     <div id="container_2">
 
     </div>
+    <h3 id="sport_section">Sport</h3>
+    <div id="container_3">
+
+    </div>
+    <div id="weather">
+        <input type="search" name="weather" placeholder="Search City">
+        <button id="weatherButton">Click</button>
+        <div id="weatherResults">
+
+        </div>
+    </div>
+    <div id="reel">
+        <h4>REEL</h4>
+        <div id="reel_content"></div>
+    </div>
+    <h3 id="india_section">India News</h3>
+    <div id="container_4">
+
+    </div>
+
+
     
 
 
@@ -33,7 +54,7 @@
 
     <script type="module">
         // API Key : e5359e588b4435f8b102fd74ddf7d720
-        import Navbar, { fetchData, showData } from "./main.js"
+        import Navbar, { fetchData, showData, weather, weatherShow } from "./main.js"
         let cont = document.getElementById("outer_navbar")
         let navbar = Navbar()
         cont.append(navbar)
@@ -41,20 +62,28 @@
         let date = document.getElementById("date")
         let dt = new Date()
         date.append(dt)
-        window.addEventListener("load", () => {
-            load()
+        window.addEventListener("click", () => {
+           // load()
+            // searchWeather()
+            let searchVal = document.getElementById("weatherButton")
+            searchVal.addEventListener("click",searchWeather)
+            
+            
+
         })
         let load = ()=>{
-            box_1()
-            box_2()
+                 box_1()
+                 box_2()
+                 box_3()
+                 reelContainer()
+                 box_5()
         }
         let box_1 = async() => {
             try{
                 let container = document.getElementById("container_1")
                 let data = await fetchData({ category: "general", pageSize: 5 })
-                console.log(data)
+                // console.log(data)
                 showData(data,"container_1")
-                //container.append(content)
             }
            catch(err){
                console.log(err)
@@ -63,9 +92,54 @@
         let box_2 = async()=>{
             try{
                 let container = document.getElementById("container_2")
-                let data = await fetchData({category:"business",pageSize:4})
-                console.log(data)
+                let data = await fetchData({category:"general",pageSize:4})
+                // console.log(data)
                 showData(data,"container_2")
+            }
+            catch(err){
+                console.log(err)
+            }
+        }
+        let box_3 = async()=>{
+            try{
+                let container = document.getElementById("container_3")
+                let data = await fetchData({category:"sports",pageSize:4})
+                // console.log(data)
+                showData(data,"container_3")
+            }
+            catch(err){
+                console.log(err)
+            }
+        }
+
+        let searchWeather = async()=>{
+            try{
+                let searchVal = document.getElementsByName("weather")[0].value;
+                let data = await weather({query: searchVal})
+                console.log(data)
+                weatherShow(data,"weatherResults")
+            }
+            catch(err){
+                console.log(err)
+            }
+        }
+
+        let reelContainer = async()=>{
+            try{
+                let container = document.getElementById("reel_content")
+                let data = await fetchData({category:"entertainment",pageSize:3})
+                showData(data,"reel_content")
+            }
+            catch(err){
+                console.log(err)
+            }
+        }
+        let box_5 = async()=>{
+            try{
+                let container = document.getElementById("container_4")
+                let data = await fetchData({category:"technology",pageSize:4})
+                // console.log(data)
+                showData(data,"container_4")
             }
             catch(err){
                 console.log(err)
