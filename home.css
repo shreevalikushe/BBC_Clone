@@ -21,7 +21,7 @@ html, body{
     margin-top: 20px;
     margin-left: auto;
 }
-#container_2,#container_3,#container_4,#container_5{
+#container_2,#container_3,#container_4,#container_5,#container_6{
     display: flex;
     flex-direction: column; 
      width: 90%;
@@ -39,7 +39,6 @@ html, body{
 }
 #container_1>div>.boxes:nth-child(2){
     grid-area: second;
-    
 }
 #container_1>div>.boxes:nth-child(3){
     grid-area: third;
@@ -55,7 +54,6 @@ html, body{
     grid-template: "first first second  third "
                     "first first fourth   fifth"   
 }
- 
 #container_1>div>.boxes{
     display: grid; 
     text-align: start;
@@ -71,7 +69,7 @@ html, body{
     opacity: 0.5;
     /* color: black !important; */
 }
-#news_section,#sport_section,#india_section,#health_section{
+#news_section,#sport_section,#india_section,#health_section,#tech_section,#editor_pick{
     width: 88%;
     border-left: yellowgreen 4px solid;
     height: 20px;
@@ -87,6 +85,12 @@ html, body{
 }
 #health_section{
     border-left: lightseagreen 4px solid ;
+}
+#tech_section{
+    border-left: blueviolet 4px solid;
+}
+#editor_pick{
+    border-left: greenyellow 4px solid;
 }
 .section{
     width: 23%;
@@ -143,7 +147,7 @@ html, body{
 
 #reel_content,#science_content{
     width: 100%;
-    padding-left: 20px;
+    /* padding-left: 20px; */
 }
 .unique{
     direction: flex;
@@ -160,5 +164,6 @@ html, body{
 .innerDiv{
     display: flex;
     justify-content: space-evenly;
+    /* background-color: rgb(200, 200, 200); */
 }
 

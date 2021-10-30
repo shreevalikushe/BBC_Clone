@@ -46,7 +46,7 @@
     <div id="container_4">
 
     </div>
-    <!-- ADD THE BIG CONTAINER HERE -->
+    
     <div id="science">
         <h4 style="font-size: 22px;">FUTURE PLANET</h4>
         <p>Sustainable planet</p>
@@ -54,15 +54,12 @@
     </div>
     <h3 id="health_section">Health News</h3>
     <div id="container_5">
+        
+    </div>
+    <h3 id="tech_section">Technology News</h3>
+    <div id="container_6">
 
     </div>
-
-
-    
-
-
-
-
 
     <script type="module">
         // API Key : e5359e588b4435f8b102fd74ddf7d720
@@ -75,13 +72,9 @@
         let dt = new Date()
         date.append(dt)
         window.addEventListener("click", () => {
-           //load()
-            // searchWeather()
+            load()
             let searchVal = document.getElementById("weatherButton")
             searchVal.addEventListener("click",searchWeather)
-            
-            
-
         })
         let load = ()=>{
                  box_1()
@@ -91,6 +84,7 @@
                  box_5()
                  scienceContainer()
                  box_6()
+                 box_7()
         }
         let box_1 = async() => {
             try{
@@ -152,7 +146,7 @@
         let box_5 = async()=>{
             try{
                 let container = document.getElementById("container_4")
-                let data = await fetchData({category:"technology",pageSize:4})
+                let data = await fetchData({category:"business",pageSize:4})
                 console.log(data)
                 showData(data,"container_4")
             }
@@ -181,6 +175,18 @@
            catch(err){
                console.log(err)
            }
+        }
+        
+        let box_7 = async()=>{
+            try{
+                let container = document.getElementById("container_6")
+                let data = await fetchData({category:"technology",pageSize:4})
+                console.log(data)
+                showData(data,"container_6")
+            }
+            catch(err){
+                console.log(err)
+            }
         }
 
     </script>
