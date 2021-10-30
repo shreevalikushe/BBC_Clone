@@ -13,6 +13,10 @@
         display: flex;
         color: white;   
     }
+    #navbar a{
+        text-decoration: none;
+        color: white ;
+    }
     .logo{
         width: 5%;
         height: 90%;

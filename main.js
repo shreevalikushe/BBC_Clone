@@ -3,8 +3,8 @@ function Navbar() {
     div.id = "navbar"
     div.innerHTML = `<img class="logo" src="https://logos-download.com/wp-content/uploads/2016/06/BBC_logo_black_background.png">
     <img class="signInLogo" src="https://as2.ftcdn.net/v2/jpg/00/65/77/27/500_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg">
-    <p class="signIn">Sign in</p>
-    <p>Home</p>
+    <p class="signIn"><a href="./signup.html">Sign in</a></p>
+    <p><a href="./home.html">Home</a></p>
     <p>News</p>
     <p>Sport</p>
     <p>Reel</p>
@@ -18,7 +18,9 @@ function Navbar() {
     return div
 }
 export const fetchData = async ({ category = "general", pageSize = 25 }, page = 1) => {
-    return fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=65de7cf43ee34250a7fad72afaea85d5&category=${category}&page=${page}&pageSize=${pageSize}`)
+    // Mumma's :  510dfd4725824bd2ace75ec56a4d1c61
+    // Mine : 65de7cf43ee34250a7fad72afaea85d5
+    return fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=510dfd4725824bd2ace75ec56a4d1c61&category=${category}&page=${page}&pageSize=${pageSize}`)
         .then((res) => {
             return res.json()
         })
@@ -40,7 +42,7 @@ export const showData = async (data, container) => {
             div.append(newsArticle)
         }
     }
-    else if(container === "reel_content"){
+    else if(container === "reel_content" || container === "science_content"){
         for (let news of data) {
             let newsArticle = await reelData(news)
             div.append(newsArticle)
@@ -96,7 +98,7 @@ const handleNews = async (data) => {
 }
 const reelData = async(data)=>{
     let box = document.createElement("div");
-    box.className = "reel";
+    box.className = "unique";
 
     let img = document.createElement("img");
     img.src = `${data.urlToImage}`;
