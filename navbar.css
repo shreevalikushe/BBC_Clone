@@ -6,12 +6,14 @@
         font-size: 15px;
     }
     #navbar{
+        /* position: fixed; */
+        /* top: 0; */
         background-color: black ; 
         padding: 2px;
         height: 30px;
         width: 100%;
         display: flex;
-        color: white;   
+        color: white;  
     }
     #navbar a{
         text-decoration: none;
@@ -30,11 +32,15 @@
         margin-right: 0px ;
         height: 90%;
     }
-    
     #navbar>p{
         margin-top: 4px;
         margin-right: 35px !important;
         margin-left: 15px !important;
+    }
+    #navbar>p:hover{
+        margin-bottom: 25px;
+        border-top: yellow 2px solid;
+        /* border-bottom: 2px solid yellow; */
     }
     .signIn{
         margin-right: 120px !important;

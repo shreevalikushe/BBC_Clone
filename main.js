@@ -20,7 +20,7 @@ function Navbar() {
 export const fetchData = async ({ category = "general", pageSize = 25 }, page = 1) => {
     // Mumma's :  510dfd4725824bd2ace75ec56a4d1c61
     // Mine : 65de7cf43ee34250a7fad72afaea85d5
-    return fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=510dfd4725824bd2ace75ec56a4d1c61&category=${category}&page=${page}&pageSize=${pageSize}`)
+    return fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=65de7cf43ee34250a7fad72afaea85d5&category=${category}&page=${page}&pageSize=${pageSize}`)
         .then((res) => {
             return res.json()
         })
@@ -28,12 +28,10 @@ export const fetchData = async ({ category = "general", pageSize = 25 }, page = 
             return res.articles
         })
 }
-
-
 export const showData = async (data, container) => {
     // console.log(container)
     let cont = document.getElementById(container)
-    cont.innerHTML = null;
+    //cont.innerHTML = null;
     let div = document.createElement("div")
     div.className = "innerDiv"
     if (container === "container_1") {
@@ -144,4 +142,43 @@ export const weatherShow = async(data,container)=>{
     cont.append(location,img,info)
 }
 
+export const fetchsearch = async({value,page})=>{
+    page = page || 1
+    return fetch(`https://newsapi.org/v2/everything?apiKey=65de7cf43ee34250a7fad72afaea85d5&q=${value}&page=${page}&pageSize=10`)
+    .then((res)=>{
+        return res.json()
+    })
+    .then((res)=>{
+        //console.log(res.articles)
+        return res.articles
+    })
+}
+export const showResultsData = async(data,container)=>{
+    let cont = document.getElementById(container)
+    //cont.innerHTML = null;
+    console.log(cont)
+    let div = document.createElement("div")
+    div.id = "resultsInnerDiv"
+    for(let news of data){
+        let newsArticle = await createCard(news)
+        div.append(newsArticle)
+    }
+    cont.append(div)
+}
+const createCard = async(data)=>{
+    let card = document.createElement("div");
+    card.className = "cards";
+
+    let img = document.createElement("img");
+    img.src = `${data.urlToImage}`;
+
+    let h4 = document.createElement("h4");
+    h4.textContent = `${data.title}`;
+
+    let p = document.createElement("p");
+    p.innerHTML = `${data.description}`;
+
+    card.append(img,h4,p)
+    return card
+}
 export default Navbar
