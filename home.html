@@ -97,7 +97,7 @@
                 currPage = pgnum
                 let searchValue = document.getElementById("search").value;
                 let data = await fetchsearch({value:searchValue,page:currPage});
-                console.log(currPage)
+                // console.log(currPage)
                 let container = document.getElementById("results")
                 container.innerHTML = null;
                 showResultsData(data,"results")
@@ -136,7 +136,7 @@
             let cont = document.getElementById("cont")
             cont.innerHTML = null;
             let searchValue = document.getElementById("search").value;
-            console.log(searchValue)
+            // console.log(searchValue)
             let results = document.createElement("div")
             results.id = "results"
             cont.append(results)
@@ -158,7 +158,7 @@
             try {
                 let container = document.getElementById("container_1")
                 let data = await fetchData({ category: "general", pageSize: 5 })
-                console.log(data)
+                // console.log(data)
                 showData(data, "container_1")
             }
             catch (err) {
@@ -169,7 +169,7 @@
             try {
                 let container = document.getElementById("container_2")
                 let data = await fetchData({ category: "general", pageSize: 4 })
-                console.log(data)
+                // console.log(data)
                 showData(data, "container_2")
             }
             catch (err) {
@@ -180,7 +180,7 @@
             try {
                 let container = document.getElementById("container_3")
                 let data = await fetchData({ category: "sports", pageSize: 4 })
-                console.log(data)
+                // console.log(data)
                 showData(data, "container_3")
             }
             catch (err) {
@@ -192,7 +192,7 @@
             try {
                 let searchVal = document.getElementsByName("weather")[0].value;
                 let data = await weather({ query: searchVal })
-                console.log(data)
+                // console.log(data)
                 weatherShow(data, "weatherResults")
             }
             catch (err) {
@@ -204,7 +204,7 @@
             try {
                 let container = document.getElementById("reel_content")
                 let data = await fetchData({ category: "entertainment", pageSize: 3 })
-                console.log(data)
+                // console.log(data)
                 showData(data, "reel_content")
             }
             catch (err) {
@@ -215,7 +215,7 @@
             try {
                 let container = document.getElementById("container_4")
                 let data = await fetchData({ category: "business", pageSize: 4 })
-                console.log(data)
+                // console.log(data)
                 showData(data, "container_4")
             }
             catch (err) {
@@ -226,7 +226,7 @@
             try {
                 let container = document.getElementById("science_content")
                 let data = await fetchData({ category: "science", pageSize: 3 })
-                console.log(data)
+                // console.log(data)
                 showData(data, "science_content")
             }
             catch (err) {
@@ -237,7 +237,7 @@
             try {
                 let container = document.getElementById("container_5")
                 let data = await fetchData({ category: "health", pageSize: 4 })
-                console.log(data)
+                // console.log(data)
                 showData(data, "container_5")
             }
             catch (err) {
@@ -249,7 +249,7 @@
             try {
                 let container = document.getElementById("container_6")
                 let data = await fetchData({ category: "technology", pageSize: 4 })
-                console.log(data)
+                // console.log(data)
                 showData(data, "container_6")
             }
             catch (err) {

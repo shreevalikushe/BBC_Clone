@@ -120,7 +120,7 @@ export const weather = async ({ query = "Pune" }) => {
             return response.json()
         })
         .then(response => {
-            console.log(response)
+            // console.log(response)
             return response
         });
 }
@@ -156,7 +156,7 @@ export const fetchsearch = async({value,page})=>{
 export const showResultsData = async(data,container)=>{
     let cont = document.getElementById(container)
     //cont.innerHTML = null;
-    console.log(cont)
+    // console.log(cont)
     let div = document.createElement("div")
     div.id = "resultsInnerDiv"
     for(let news of data){

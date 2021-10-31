@@ -171,7 +171,8 @@ html, body{
     margin: auto;
     background-color: rgb(171, 200, 245);
     padding: 2%;
-    display: inline;
+    height: 300px;
+    /* display: inline; */
 }
 #results{
     margin-top: 50px;
@@ -188,6 +189,7 @@ html, body{
     float: left;
     /* display: inline; */
     padding-right: 15px;
+    height: 100%;
 }
 #pagination{
     width: 30%;
