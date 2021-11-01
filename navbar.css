@@ -65,4 +65,26 @@
         margin-top: 2px;
         border: 1px solid white;
     }
+    #more{
+        padding: 0px;
+        margin: 0px;
+        background-color: black;
+        color: white;
+        border: none;
+        width: 15px;
+        /* border: 1px solid white; */
+    }
+    #lang{
+        display: none;
+    }
+    #lang{
+        border: 1px solid black;
+        color: white;
+        background-color: tomato;
+        width: 87px;
+    }
+    #navbar a{
+        text-decoration: none;
+        color: white ;
+    }
     
