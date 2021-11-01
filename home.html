@@ -92,12 +92,12 @@
             const pagination = document.getElementById("pagination")
             pagination.addEventListener("click",handlePage)
 
-            // let btnMore = document.getElementById("more");
-            // btnMore.addEventListener("click",showHidden);
-            // btnMore.addEventListener("dblclick",hide)
+            let btnMore = document.getElementById("more");
+            btnMore.addEventListener("click",showHidden);
+            btnMore.addEventListener("dblclick",hide)
 
-            // let langDiv = document.getElementById("lang");
-            // langDiv.addEventListener("click",changeLanguage)
+            let langDiv = document.getElementById("lang");
+            langDiv.addEventListener("click",changeLanguage)
 
         })
 
@@ -105,7 +105,8 @@
             try{
                 let lang = event.target.value;
                 language = lang
-                load()
+                console.log(language)
+                await handleSearch()
             }
             catch(err){
                 console.log(err)
@@ -125,7 +126,7 @@
                 const pgnum = parseInt(event.target.name)
                 currPage = pgnum
                 let searchValue = document.getElementById("search").value;
-                let data = await fetchsearch({value:searchValue,page:currPage});
+                let data = await fetchsearch({value:searchValue,page:currPage,language:language});
                 // console.log(currPage)
                 let container = document.getElementById("results")
                 container.innerHTML = null;
@@ -169,7 +170,7 @@
             let results = document.createElement("div")
             results.id = "results"
             cont.append(results)
-            let data = await fetchsearch({value:searchValue})
+            let data = await fetchsearch({value:searchValue,language:language})
             showResultsData(data,"results")
             
         }

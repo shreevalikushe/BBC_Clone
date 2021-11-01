@@ -12,12 +12,14 @@ function Navbar() {
     <p>Travel</p>
     <p>Future</p>
     <p>Culture</p>
-    <p>More <button id="more" > &#8964;</button>
+    <p>Language <button id="more" > &#8964;</button>
     <select name="languages" id="lang">
         <option value="de">German</option>
         <option value="fr">French</option>
         <option value="nl">Dutch</option>
         <option value="ru">Russian</option>
+        <option value="zh">Chinese</option>
+        <option value="pt">Portugese</option>
     </select> 
     </p> 
     <input id="search" type="search" placeholder="Search" name="search"> 
@@ -27,7 +29,7 @@ function Navbar() {
 export const fetchData = async ({ category = "general", pageSize = 25}, page = 1) => {
     // Mumma's :  510dfd4725824bd2ace75ec56a4d1c61
     // Mine : 65de7cf43ee34250a7fad72afaea85d5
-    return fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=65de7cf43ee34250a7fad72afaea85d5&category=${category}&page=${page}&pageSize=${pageSize}`)
+    return fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=510dfd4725824bd2ace75ec56a4d1c61&category=${category}&page=${page}&pageSize=${pageSize}`)
         .then((res) => {
             return res.json()
         })
@@ -149,9 +151,10 @@ export const weatherShow = async (data, container) => {
     cont.append(location, img, info)
 }
 
-export const fetchsearch = async ({ value, page }) => {
+export const fetchsearch = async ({ value, page,language = "en" }) => {
     page = page || 1
-    return fetch(`https://newsapi.org/v2/everything?apiKey=65de7cf43ee34250a7fad72afaea85d5&q=${value}&page=${page}&pageSize=10`)
+    //510dfd4725824bd2ace75ec56a4d1c61
+    return fetch(`https://newsapi.org/v2/everything?apiKey=510dfd4725824bd2ace75ec56a4d1c61&q=${value}&page=${page}&pageSize=10&language=${language}`)
         .then((res) => {
             return res.json()
         })

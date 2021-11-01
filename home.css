@@ -225,4 +225,10 @@ html, body{
 #lang{
     display: none;
 }
+#lang{
+    border: 1px solid black;
+    color: white;
+    background-color: tomato;
+    width: 87px;
+}
 
