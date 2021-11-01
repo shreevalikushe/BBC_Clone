@@ -12,12 +12,19 @@ function Navbar() {
     <p>Travel</p>
     <p>Future</p>
     <p>Culture</p>
-    <p>More &#8964;  </p> 
+    <p>More <button id="more" > &#8964;</button>
+    <select name="languages" id="lang">
+        <option value="de">German</option>
+        <option value="fr">French</option>
+        <option value="nl">Dutch</option>
+        <option value="ru">Russian</option>
+    </select> 
+    </p> 
     <input id="search" type="search" placeholder="Search" name="search"> 
     <img id="searchIcon" src="https://as1.ftcdn.net/v2/jpg/03/25/73/68/1000_F_325736897_lyouuiCkWI59SZAPGPLZ5OWQjw2Gw4qY.jpg">`
     return div
 }
-export const fetchData = async ({ category = "general", pageSize = 25 }, page = 1) => {
+export const fetchData = async ({ category = "general", pageSize = 25}, page = 1) => {
     // Mumma's :  510dfd4725824bd2ace75ec56a4d1c61
     // Mine : 65de7cf43ee34250a7fad72afaea85d5
     return fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=65de7cf43ee34250a7fad72afaea85d5&category=${category}&page=${page}&pageSize=${pageSize}`)
@@ -40,7 +47,7 @@ export const showData = async (data, container) => {
             div.append(newsArticle)
         }
     }
-    else if(container === "reel_content" || container === "science_content"){
+    else if (container === "reel_content" || container === "science_content") {
         for (let news of data) {
             let newsArticle = await reelData(news)
             div.append(newsArticle)
@@ -94,7 +101,7 @@ const handleNews = async (data) => {
     box.append(img, h5, h6, publishDate)
     return box
 }
-const reelData = async(data)=>{
+const reelData = async (data) => {
     let box = document.createElement("div");
     box.className = "unique";
 
@@ -107,7 +114,7 @@ const reelData = async(data)=>{
     h5.style.margin = "0px";
     h5.style.fontSize = "16px";
 
-    box.append(img,h5)
+    box.append(img, h5)
     return box
 
 
@@ -124,7 +131,7 @@ export const weather = async ({ query = "Pune" }) => {
             return response
         });
 }
-export const weatherShow = async(data,container)=>{
+export const weatherShow = async (data, container) => {
     let cont = document.getElementById(container)
     cont.innerHTML = null
     let location = document.createElement("h6")
@@ -139,33 +146,33 @@ export const weatherShow = async(data,container)=>{
 
     let info = document.createElement("p")
     info.textContent = `Cloudcover:${data.current.cloudcover} | Humidity: ${data.current.humidity} | Temp: ${data.current.temperature} | Observation Time: ${data.current.observation_time}`
-    cont.append(location,img,info)
+    cont.append(location, img, info)
 }
 
-export const fetchsearch = async({value,page})=>{
+export const fetchsearch = async ({ value, page }) => {
     page = page || 1
     return fetch(`https://newsapi.org/v2/everything?apiKey=65de7cf43ee34250a7fad72afaea85d5&q=${value}&page=${page}&pageSize=10`)
-    .then((res)=>{
-        return res.json()
-    })
-    .then((res)=>{
-        //console.log(res.articles)
-        return res.articles
-    })
+        .then((res) => {
+            return res.json()
+        })
+        .then((res) => {
+            //console.log(res.articles)
+            return res.articles
+        })
 }
-export const showResultsData = async(data,container)=>{
+export const showResultsData = async (data, container) => {
     let cont = document.getElementById(container)
     //cont.innerHTML = null;
     // console.log(cont)
     let div = document.createElement("div")
     div.id = "resultsInnerDiv"
-    for(let news of data){
+    for (let news of data) {
         let newsArticle = await createCard(news)
         div.append(newsArticle)
     }
     cont.append(div)
 }
-const createCard = async(data)=>{
+const createCard = async (data) => {
     let card = document.createElement("div");
     card.className = "cards";
 
@@ -178,7 +185,7 @@ const createCard = async(data)=>{
     let p = document.createElement("p");
     p.innerHTML = `${data.description}`;
 
-    card.append(img,h4,p)
+    card.append(img, h4, p)
     return card
 }
 export default Navbar

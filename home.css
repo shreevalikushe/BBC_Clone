@@ -213,4 +213,16 @@ html, body{
     color: black;
     background-color: greenyellow;
 }
+#more{
+    padding: 0px;
+    margin: 0px;
+    background-color: black;
+    color: white;
+    border: none;
+    width: 15px;
+    border: 1px solid white;
+}
+#lang{
+    display: none;
+}
 
