@@ -14,6 +14,7 @@ function Navbar() {
     <p>Culture</p>
     <p>Language <button id="more" > &#8964;</button>
     <select name="languages" id="lang">
+        <option value="en">English</option>
         <option value="de">German</option>
         <option value="fr">French</option>
         <option value="nl">Dutch</option>
@@ -151,7 +152,7 @@ export const weatherShow = async (data, container) => {
     cont.append(location, img, info)
 }
 
-export const fetchsearch = async ({ value, page,language = "en" }) => {
+export const fetchsearch = async ({ value, page,language = en }) => {
     page = page || 1
     //510dfd4725824bd2ace75ec56a4d1c61
     return fetch(`https://newsapi.org/v2/everything?apiKey=510dfd4725824bd2ace75ec56a4d1c61&q=${value}&page=${page}&pageSize=10&language=${language}`)

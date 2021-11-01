@@ -71,6 +71,7 @@
     <script type="module">
         var currPage = 1;
         var language = "en";
+        
         // API Key : e5359e588b4435f8b102fd74ddf7d720
         import Navbar, { fetchData, showData, weather, weatherShow,fetchsearch,showResultsData } from "./main.js"
         let cont = document.getElementById("outer_navbar")
@@ -80,7 +81,7 @@
         let date = document.getElementById("date")
         let dt = new Date()
         date.append(dt)
-        window.addEventListener("click", () => {
+        window.addEventListener("load", () => {
            load()
             let searchVal = document.getElementById("weatherButton")
            searchVal.addEventListener("click", searchWeather)
@@ -96,6 +97,8 @@
             btnMore.addEventListener("click",showHidden);
             btnMore.addEventListener("dblclick",hide)
 
+           
+
             let langDiv = document.getElementById("lang");
             langDiv.addEventListener("click",changeLanguage)
 
@@ -106,7 +109,7 @@
                 let lang = event.target.value;
                 language = lang
                 console.log(language)
-                await handleSearch()
+                handleSearch()
             }
             catch(err){
                 console.log(err)
