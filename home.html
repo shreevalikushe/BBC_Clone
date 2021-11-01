@@ -73,7 +73,8 @@
         var language = "en";
         
         // API Key : e5359e588b4435f8b102fd74ddf7d720
-        import Navbar, { fetchData, showData, weather, weatherShow,fetchsearch,showResultsData } from "./main.js"
+        import { fetchData, showData, weather, weatherShow,fetchsearch,showResultsData } from "./main.js"
+        import Navbar from "./navbar.js"
         let cont = document.getElementById("outer_navbar")
         let navbar = Navbar()
         cont.append(navbar)
@@ -81,7 +82,7 @@
         let date = document.getElementById("date")
         let dt = new Date()
         date.append(dt)
-        window.addEventListener("load", () => {
+        window.addEventListener("click", () => {
            load()
             let searchVal = document.getElementById("weatherButton")
            searchVal.addEventListener("click", searchWeather)
