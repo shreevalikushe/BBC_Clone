@@ -82,7 +82,7 @@
         let date = document.getElementById("date")
         let dt = new Date()
         date.append(dt)
-        window.addEventListener("click", () => {
+        window.addEventListener("load", () => {
            load()
             let searchVal = document.getElementById("weatherButton")
            searchVal.addEventListener("click", searchWeather)

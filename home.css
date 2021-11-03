@@ -212,3 +212,14 @@ html, body{
 }
 
 
+@media only screen and (min-width: 300px) and (max-width: 900px) {
+    #reel,#science{
+        font-size: 14px;
+    }
+    #pagination>button{
+        font-size: 14px;
+    }
+
+}
+
+

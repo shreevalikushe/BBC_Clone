@@ -71,7 +71,7 @@ const main = async (data) => {
     box.style.backgroundImage = `url(${data.urlToImage})`
     let h4 = document.createElement("h4")
     h4.textContent = `${data.title}`
-    h4.style.fontSize = "16px"
+    // h4.style.fontSize = "16px"
     let publishDate = document.createElement("p")
     publishDate.textContent = `Published At: ${data.publishedAt}`
     box.append(h4, publishDate)
@@ -88,9 +88,9 @@ const handleNews = async (data) => {
     h5.textContent = `${data.title}`
     h5.style.padding = "0px";
     h5.style.margin = "0px";
-    h5.style.fontSize = "16px"
+    // h5.style.fontSize = "16px"
     let h6 = document.createElement("h6");
-    h6.style.fontSize = "14px";
+    // h6.style.fontSize = "14px";
     h6.style.padding = "0px";
     h6.style.margin = "0px";
     h6.style.marginTop = "5px"
@@ -115,7 +115,7 @@ const reelData = async (data) => {
     h5.textContent = `${data.title}`
     h5.style.padding = "0px";
     h5.style.margin = "0px";
-    h5.style.fontSize = "16px";
+    // h5.style.fontSize = "16px";
 
     box.append(img, h5)
     return box
@@ -141,7 +141,7 @@ export const weatherShow = async (data, container) => {
     location.style.padding = "0px";
     location.style.margin = "0px"
     location.textContent = `${data.location.name},${data.location.region},${data.location.country}`
-    location.style.fontSize = "18px";
+    // location.style.fontSize = "18px";
 
     let img = document.createElement("img")
     img.src = `${data.current.weather_icons}`
