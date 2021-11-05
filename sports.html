@@ -5,13 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="nav.css"/>
+    <link rel="stylesheet" href="navbar.css"/>
    <link rel="stylesheet" href="sports.css"/>
+   <link rel="icon" type="image/png" href="https://logos-download.com/wp-content/uploads/2016/06/BBC_logo_black_background.png">
 </head>
 <body>
    
     <div id="nav">
 
+    </div>
+    <div id="nav_yellow">
+        <h1>SPORTS</h1>
     </div>
     <div id="main">
         <div id="main_left">
@@ -43,7 +47,7 @@
                        
                     
                         </div>
-                        <hr style="margin: 5rem 0;">
+                        <hr style="margin: 5rem 0rem;">
                         <h1 style="margin: 1rem;">More To Explore</h1>
                         <div id="cont4">
                             <div id="cont4_L">
@@ -55,7 +59,7 @@
                            
                         
                             </div>
-                            <hr style="margin-top: 3rem;">
+                            <hr style="margin-top: 5rem; margin-bottom: 5rem;">
                             <h1 style="margin: 3rem 0rem;">Find Us Here</h1>
                             <div id="last">
                                 <div id="logo">
@@ -84,7 +88,8 @@
     
     <script type="module">
       
-       import {Navbar,fetchData,loadData,handleNews} from "./com.js"
+       import {fetchData,loadData,handleNews} from "./com.js"
+       import Navbar from "./navbar.js"
             let nav = document.getElementById("nav");
             let nav1 = Navbar();
             nav.append(nav1);
@@ -186,12 +191,25 @@
             }
            
         }
-
+        let main_rightc = async() => {
+            try{
+                let data = await fetchData({category:"sports", pageSize:10,page:3})
+            console.log(data);
+            loadData(data,"main_right")
+            }
+            catch(error){
+                console.log(error)
+            }
+           
+        }
+       
 
        
         window.addEventListener("load",function(){
+            main_rightc();
             box_1();
             box_2();
+           
             box_3();
             box_cont2_L();
             box_cont2_R();
