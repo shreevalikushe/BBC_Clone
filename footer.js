@@ -4,13 +4,13 @@ export const addFooter = async () =>{
     <h3>Explore the BBC</h3>
     <div id = "id1">
     <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html">News</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="travel.html">Travel</a></li>
         <li><a href="entertainment.html">Entertainment</a></li>
         <li><a href="health.html">Health</a></li>
-        <li><a href="index.html">Science</a></li>
-        <li><a href="index.html">Sports</a></li>
-        <li><a href="index.html">Technology</a></li>
+        <li><a href="science.html">Science</a></li>
+        <li><a href="sports.html">Sports</a></li>
+        <li><a href="Technology.html">Technology</a></li>
     </ul>
     <hr/>
     <ul>
