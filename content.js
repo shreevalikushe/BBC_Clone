@@ -23,7 +23,10 @@ export const showData = async (data) => {
         const newsdata = `<div class="card" style="width: 18rem;">
             <img src="${news.urlToImage}" class="card-img-top" alt="...">
          <div class="card-body">
-             <a href = "${/contentpage.html/news.title}" class="btn btn-light"><p class="card-title">${news.title}</p></a>
+             <a href = "" class="btn btn-light"><p class="card-title">${news.title}</p></a>
+         </div>
+         <div class="card-body">
+            <p class="card-title"><span class="btn btn-dark">Published At:</span> ${news.publishedAt}</p>
          </div>
         </div>`
         //  console.log(img)

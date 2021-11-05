@@ -6,8 +6,8 @@ export const addFooter = async () =>{
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html">News</a></li>
-        <li><a href="index.html">Entertainment</a></li>
-        <li><a href="index.html">Health</a></li>
+        <li><a href="entertainment.html">Entertainment</a></li>
+        <li><a href="health.html">Health</a></li>
         <li><a href="index.html">Science</a></li>
         <li><a href="index.html">Sports</a></li>
         <li><a href="index.html">Technology</a></li>
