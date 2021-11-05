@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="navbar.css"/>
    <link rel="stylesheet" href="entertainment.css"/>
    <link rel="icon" type="image/png" href="https://logos-download.com/wp-content/uploads/2016/06/BBC_logo_black_background.png">
+   <link rel="stylesheet" href="footer.css">
 </head>
 <body>
    
@@ -15,7 +16,7 @@
 
     </div>
     <div id="nav_yellow">
-        <h1>entertainment</h1>
+        <h1>Entertainment</h1>
     </div>
     <div id="main">
         <div id="main_left">
@@ -84,11 +85,19 @@
         <div id="main_right"></div>
 
     </div>
-  
-    
+    <div class="footer-content">
+
+    </div>
     <script type="module">
       
-       import {Navbar,fetchData,loadData,handleNews} from "./com.js"
+       import {fetchData,loadData,handleNews} from "./com.js"
+       import Navbar from "./navbar.js";
+       import {addFooter} from "./footer.js";
+
+       let foot = document.querySelector(".footer-content");
+        // let foot = document.querySelector(".footer-content");
+        let footer = await addFooter();
+        foot.innerHTML = footer;
             let nav = document.getElementById("nav");
             let nav1 = Navbar();
             nav.append(nav1);

@@ -5,13 +5,12 @@ function Navbar() {
     <img class="signInLogo" src="https://as2.ftcdn.net/v2/jpg/00/65/77/27/500_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg">
     <p class="signIn"><a href="./signup.html">Sign in</a></p>
     <p><a href="./home.html">Home</a></p>
-    <p>News</p>
-    <p>Sport</p>
-    <p>Reel</p>
-    <p>Worklife</p>
-    <p>Travel</p>
-    <p>Future</p>
-    <p>Culture</p>
+    <p><a href="./travel.html">Travel</a></p>
+    <p><a href="./sports.html">Sport</a></p>
+    <p><a href="./health.html">Health</a></p>
+    <p><a href="./Technology.html">Technology</a></p>
+    <p><a href="./science.html">Science</a></p>
+    <p><a href="./entertainment.html">Entertainment</a></p>
     <p>Language <button id="more" > &#8964;</button>
     <select name="languages" id="lang">
         <option value="en">English</option>

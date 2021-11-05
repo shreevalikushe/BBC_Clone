@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="https://logos-download.com/wp-content/uploads/2016/06/BBC_logo_black_background.png">
     <link rel="stylesheet" href="./navbar.css">
     <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 
 <body>
@@ -65,6 +66,9 @@
 
         </div>
     </div>
+    <div class="footer-content">
+
+    </div>
     <div id="pagination">
 
     </div>
@@ -75,10 +79,19 @@
         
         // API Key : e5359e588b4435f8b102fd74ddf7d720
         import { fetchData, showData, weather, weatherShow,fetchsearch,showResultsData } from "./main.js"
+        import {addFooter} from "./footer.js"
         import Navbar from "./navbar.js"
         let cont = document.getElementById("outer_navbar")
         let navbar = Navbar()
         cont.append(navbar)
+
+
+       let foot = document.querySelector(".footer-content");
+        // let foot = document.querySelector(".footer-content");
+        let footer = await addFooter();
+        foot.innerHTML = footer;
+
+
 
         let date = document.getElementById("date")
         let dt = new Date()
@@ -292,7 +305,7 @@
             }
         }
 
-    </script>  -->
+    </script>
 </body>
 
 </html>

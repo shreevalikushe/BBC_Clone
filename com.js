@@ -3,7 +3,8 @@
 /*e36b5c825d4e4a27b3b262445a398ffd */
 /* 198bd3c9c502495b83502cc5a2321c98*/ 
  let fetchData = async ({ category = "general", pageSize = 25 , page = 1 }) => {
-   return fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=198bd3c9c502495b83502cc5a2321c98&category=${category}&page=${page}&pageSize=${pageSize}`)
+     // utkarsh 198bd3c9c502495b83502cc5a2321c98
+   return fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=65de7cf43ee34250a7fad72afaea85d5&category=${category}&page=${page}&pageSize=${pageSize}`)
         .then(function(res){
         return res.json()
     })
